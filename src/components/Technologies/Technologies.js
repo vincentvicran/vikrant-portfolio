@@ -25,7 +25,7 @@ import {
 
 const Technologies = () => (
   <Section id="tech">
-    <SectionDivider style={{ margin: "6rem 0" }} />
+    <SectionDivider style={{ margin: "1rem 0 3rem" }} />
     <SectionTitle>Technologies</SectionTitle>
     <SectionText>
       Experienced with Fullstack development tools.

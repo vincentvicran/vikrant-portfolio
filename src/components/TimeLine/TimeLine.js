@@ -65,7 +65,7 @@ const Timeline = () => {
 
   return (
     <Section id="about">
-      <SectionDivider style={{ margin: "6rem 0" }} />
+      <SectionDivider style={{ margin: "1rem 0 3rem" }} />
       <SectionTitle>About Me</SectionTitle>
       <SectionText>
         A minimalist;
@@ -142,7 +142,6 @@ const Timeline = () => {
           );
         })}
       </CarouselButtons>
-      <SectionDivider />
     </Section>
   );
 };
