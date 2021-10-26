@@ -65,6 +65,7 @@ const Timeline = () => {
 
   return (
     <Section id="about">
+      <SectionDivider style={{ margin: "6rem 0" }} />
       <SectionTitle>About Me</SectionTitle>
       <SectionText>
         A minimalist;

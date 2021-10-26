@@ -28,3 +28,9 @@ export const TimeLineData = [
   { year: 2020, text: "Exhibited the frontend tools; specifically ReactJS" },
   { year: 2021, text: "Looking for opportunities" },
 ];
+
+export const AccomplishmentData = [
+  { number: 2, text: "Open Source Projects" },
+  { number: 14, text: "Github Followers" },
+  { number: 5, text: "Github Stars" },
+];
