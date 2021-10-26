@@ -57,7 +57,7 @@ export const List = styled.ul`
 export const ListContainer = styled.div`
   display: flex;
   flex-direction: column;
-
+  margin: 0 auto;
   @media ${(props) => props.theme.breakpoints.sm} {
     display: flex;
     margin-left: 18px;
@@ -104,7 +104,9 @@ export const ListParagraph = styled.p`
 export const ListItem = styled.li`
   max-width: 320px;
   display: flex;
+  flex: 1;
   flex-direction: column;
+  justify-content: space-between;
 
   @media ${(props) => props.theme.breakpoints.md} {
     max-width: 203px;

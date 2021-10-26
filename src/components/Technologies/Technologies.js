@@ -27,7 +27,11 @@ const Technologies = () => (
   <Section id="tech">
     <SectionDivider style={{ margin: "6rem 0" }} />
     <SectionTitle>Technologies</SectionTitle>
-    <SectionText>Experienced with Fullstack development tools.</SectionText>
+    <SectionText>
+      Experienced with Fullstack development tools.
+      <br />
+      Decency towards JavaScript.
+    </SectionText>
     <List>
       <ListItem>
         <ListContainer>
