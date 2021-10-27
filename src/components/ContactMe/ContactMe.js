@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import axios from 'axios';
+import { toast } from 'react-toastify';
 
 import {
     BlogCard,
@@ -17,16 +19,42 @@ import { Section, SectionDivider, SectionTitle } from '../../styles/GlobalCompon
 
 const ContactMe = () => {
     const [feedData, setFeedData] = useState({
-        name: 'Vikrant Shrestha',
-        email: 'vvicran@gmail.com',
-        feedback: 'Impressive portfolio!',
+        name: '',
+        email: '',
+        message: '',
     });
 
-    const { name, email, feedback } = feedData;
+    const { name, email, message } = feedData;
 
-    const submitHandler = (e) => {
-        e.preventdefault();
-        if (name === '' || email === '' || feedback === '') alert();
+    const submitHandler = async (e) => {
+        e.preventDefault();
+
+        try {
+            const res = await axios.post(`http://localhost:3300/contactme`, feedData, {
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+            });
+
+            console.log(res);
+
+            if (name.length === 0 || email.length === 0 || message.length === 0) {
+                toast.error(res.data.msg);
+            } else if (res.status === 200) {
+                toast.success(res.data.msg);
+                setFeedData({
+                    name: '',
+                    email: '',
+                    message: '',
+                });
+            }
+        } catch (err) {
+            console.log(err);
+        }
+    };
+
+    const onChange = (e) => {
+        setFeedData({ ...feedData, [e.target.name]: e.target.value });
     };
 
     return (
@@ -37,25 +65,25 @@ const ContactMe = () => {
                 <BlogCard>
                     {/* <Img src={image} /> */}
                     <TitleContent>
-                        <HeaderThree title="feedback">Feedback Galore!</HeaderThree>
+                        <HeaderThree title="Feedback">Feedback Galore!</HeaderThree>
                         <Hr />
                     </TitleContent>
                     <CardInfo>Please convey your impressions!</CardInfo>
-                    <Form>
+                    <Form onSubmit={submitHandler}>
                         <UtilityList>
                             <TitleContent>Name</TitleContent>
-                            <Input type="text" />
+                            <Input type="text" name="name" value={name} onChange={onChange} />
                         </UtilityList>
                         <UtilityList>
                             <TitleContent>Email</TitleContent>
-                            <Input type="email" />
+                            <Input type="email" name="email" value={email} onChange={onChange} />
                         </UtilityList>
                         <UtilityList>
-                            <TitleContent>Feedback</TitleContent>
-                            <TextArea rows="4" />
+                            <TitleContent>Message</TitleContent>
+                            <TextArea rows="4" name="message" value={message} onChange={onChange} />
                         </UtilityList>
 
-                        <Buttons>Submit</Buttons>
+                        <Buttons type="submit">Submit</Buttons>
                     </Form>
                 </BlogCard>
             </GridContainer>
