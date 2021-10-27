@@ -23,6 +23,7 @@ export const GridContainer = styled.section`
 `;
 export const BlogCard = styled.div`
     border-radius: 10px;
+    margin: 0 15%;
     box-shadow: 3px 3px 20px rgba(80, 78, 78, 0.5);
     padding: 50px;
     text-align: center;
