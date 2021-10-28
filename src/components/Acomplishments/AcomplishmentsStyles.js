@@ -13,7 +13,7 @@ export const Boxes = styled.div`
 
     @media ${(props) => props.theme.breakpoints.sm} {
         display: flex;
-        width: 500px;
+        width: 70%;
         margin: 24px auto;
     }
 `;

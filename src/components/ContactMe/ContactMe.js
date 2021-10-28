@@ -2,6 +2,9 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { toast } from 'react-toastify';
 import { StyledModal } from './ContactMeStyles';
+import { GiClick } from 'react-icons/gi';
+import { GrNorton } from 'react-icons/gr';
+import { LeftSection } from './ContactMeStyles';
 
 import {
     BlogCard,
@@ -15,10 +18,10 @@ import {
     Buttons1,
     Form,
     Input,
+    Img,
     TextArea,
 } from './ContactMeStyles';
 import { Section, SectionDivider, SectionTitle } from '../../styles/GlobalComponents';
-import { Autoplay } from 'swiper';
 
 const ContactMe = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -36,6 +39,10 @@ const ContactMe = () => {
 
     const submitHandler = async (e) => {
         e.preventDefault();
+
+        if (!navigator.online) {
+            toast.error('Oops! You are offline!');
+        }
 
         try {
             const res = await axios.post(`http://localhost:3300/contactme`, feedData, {
@@ -69,8 +76,22 @@ const ContactMe = () => {
         <Section id="contact">
             <SectionDivider />
             <SectionTitle main>Contact Me</SectionTitle>
-            <Buttons1 onClick={toggleModal}>Hey there! Click me!</Buttons1>
-
+            <LeftSection onClick={toggleModal}>
+                <Img src="/images/contactPic.png" />
+                <Buttons1 type="button" onClick={toggleModal}>
+                    <GiClick
+                        style={{
+                            position: 'absolute',
+                            left: '5px',
+                            fontSize: '30px',
+                            overflow: 'visible',
+                        }}
+                    />
+                    Hey there! Click me!
+                </Buttons1>
+            </LeftSection>
+            //!form submission canceled because form is not connected.//*solution is to give type="submit" to form
+            //*button and type="button" to all other buttons
             <StyledModal isOpen={isOpen} onBackgroundClick={toggleModal} onEscapeKeydown={toggleModal}>
                 <GridContainer>
                     <BlogCard>
@@ -94,7 +115,8 @@ const ContactMe = () => {
                                 <TextArea rows="4" name="message" value={message} onChange={onChange} />
                             </UtilityList>
 
-                            <Buttons type="submit" onClick={toggleModal}>
+                            <Buttons type="submit">
+                                <GrNorton style={{ padding: '5px 5px 0 0' }} />
                                 Submit
                             </Buttons>
                         </Form>

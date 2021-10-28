@@ -16,9 +16,12 @@ import {
     TitleContent,
     UtilityList,
     Img,
+    Buttons,
 } from './ProjectsStyles';
 import { Section, SectionDivider, SectionTitle } from '../../styles/GlobalComponents';
 import { projects } from '../../constants/constants';
+import { DiCode } from 'react-icons/di';
+import { GiStack } from 'react-icons/gi';
 
 const Projects = () => {
     return (
@@ -68,6 +71,7 @@ const Projects = () => {
                                                 width: '100px',
                                             }}
                                         >
+                                            <GiStack style={{ padding: '5px 5px 0 0' }} />
                                             Stack
                                         </TitleContent>
                                         <TagList>
@@ -77,9 +81,10 @@ const Projects = () => {
                                         </TagList>
                                     </div>
                                     <UtilityList>
-                                        <ExternalLinks href={source} target="_blank">
-                                            Source
-                                        </ExternalLinks>
+                                        <Buttons href={source} target="_blank">
+                                            <DiCode style={{ fontSize: '30px' }} />
+                                            <p style={{ padding: '5px 5px 0 0' }}>Source</p>
+                                        </Buttons>
                                     </UtilityList>
                                 </BlogCard>
                             </Tilt>

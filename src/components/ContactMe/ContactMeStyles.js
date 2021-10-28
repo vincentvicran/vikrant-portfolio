@@ -10,11 +10,25 @@ export const StyledModal = Modal.styled`
   background-color: ${(props) => props.theme.colors.white};
 `;
 
+export const LeftSection = styled.div`
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+
+    @media ${(props) => props.theme.breakpoints.sm} {
+        display: flex;
+        flex-direction: column;
+
+        margin: 0;
+    }
+`;
+
 export const Img = styled.img`
-    width: 100%;
-    height: 100%;
+    width: 200px;
+    height: 300px;
     object-fit: cover;
     overflow: hidden;
+    align-self: center;
 `;
 
 export const GridContainer = styled.section`
@@ -112,14 +126,14 @@ export const Buttons = styled.button`
 `;
 
 export const Buttons1 = styled.button`
-    width: 200px;
-    padding: 10px 0;
+    width: 220px;
+    position: relative;
+    padding: 10px 0 10px 20px;
     background-color: rgba(100, 100, 255, 0.6);
     margin: auto;
     color: #d4c0c0;
     border: 0;
     font-size: 1.6rem;
-    padding: 1rem 1.5rem;
     border-radius: 15px;
     transition: 0.5s;
     cursor: pointer;
