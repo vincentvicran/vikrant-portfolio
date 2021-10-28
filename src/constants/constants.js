@@ -1,8 +1,7 @@
 export const projects = [
     {
         title: 'Bike Spares',
-        description:
-            'Using React, Node.js, Express & MongoDB built a Full Stack MERN Application, that provides the ease of access for bike spare parts ecommerce.',
+        description: 'Full Stack MERN Application, that provides the ease of access for bike spare parts ecommerce.',
         image: '/images/bikespares.png',
         tags: ['Mongo', 'Express', 'React', 'Node'],
         source: 'https://github.com/vincentvicran/bikespareparts',
@@ -12,7 +11,7 @@ export const projects = [
     {
         title: 'Tax Pay',
         description:
-            'Full Stack MERN Application rationalizing the efficient experience of vehicle tax payment and collection service.',
+            'Full Stack MERN Application rationalizing the experience of vehicle tax payment and collection service.',
         image: '/images/taxpay.png',
         tags: ['Mongo', 'Express', 'React', 'Node'],
         source: 'https://github.com/vincentvicran/tax-pay',
