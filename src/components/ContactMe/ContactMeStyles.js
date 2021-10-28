@@ -1,4 +1,14 @@
 import styled from 'styled-components';
+import Modal from 'styled-react-modal';
+
+export const StyledModal = Modal.styled`
+  width: 20rem;
+  height: 20rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: ${(props) => props.theme.colors.white};
+`;
 
 export const Img = styled.img`
     width: 100%;
@@ -23,11 +33,13 @@ export const GridContainer = styled.section`
 `;
 export const BlogCard = styled.div`
     border-radius: 10px;
-    margin: 0 15%;
+    margin: 0 50px;
     box-shadow: 3px 3px 20px rgba(80, 78, 78, 0.5);
     padding: 50px;
     text-align: center;
     width: 400px;
+    backdrop-filter: blur(15px);
+    background-color: rgba(52, 0, 102, 0.15);
     @media ${(props) => props.theme.breakpoints.sm} {
         width: 100%;
     }
@@ -93,8 +105,26 @@ export const Buttons = styled.button`
     background: #6b3030;
     border-radius: 15px;
     transition: 0.5s;
+    cursor: pointer;
     &:hover {
         background: #801414;
+    }
+`;
+
+export const Buttons1 = styled.button`
+    width: 200px;
+    padding: 10px 0;
+    background-color: rgba(100, 100, 255, 0.6);
+    margin: auto;
+    color: #d4c0c0;
+    border: 0;
+    font-size: 1.6rem;
+    padding: 1rem 1.5rem;
+    border-radius: 15px;
+    transition: 0.5s;
+    cursor: pointer;
+    &:hover {
+        background-color: rgba(100, 0, 255, 0.6);
     }
 `;
 
@@ -124,6 +154,7 @@ export const Input = styled.input`
     padding: 5px 10px;
     text-align: center;
     font-size: 14px;
+    width: 230px;
 `;
 
 export const TextArea = styled.textarea`
@@ -135,5 +166,7 @@ export const TextArea = styled.textarea`
     font-size: 14px;
     padding: 5px 10px;
     text-align: center;
+    width: 230px;
+
     resize: none;
 `;

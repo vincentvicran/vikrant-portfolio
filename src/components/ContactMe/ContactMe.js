@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { toast } from 'react-toastify';
+import { StyledModal } from './ContactMeStyles';
 
 import {
     BlogCard,
@@ -11,13 +12,20 @@ import {
     TitleContent,
     UtilityList,
     Buttons,
+    Buttons1,
     Form,
     Input,
     TextArea,
 } from './ContactMeStyles';
 import { Section, SectionDivider, SectionTitle } from '../../styles/GlobalComponents';
+import { Autoplay } from 'swiper';
 
 const ContactMe = () => {
+    const [isOpen, setIsOpen] = useState(false);
+
+    function toggleModal(e) {
+        setIsOpen(!isOpen);
+    }
     const [feedData, setFeedData] = useState({
         name: '',
         email: '',
@@ -61,32 +69,38 @@ const ContactMe = () => {
         <Section nopadding id="contact">
             <SectionDivider style={{ margin: '1rem 0 0rem' }} />
             <SectionTitle main>Contact Me</SectionTitle>
-            <GridContainer>
-                <BlogCard>
-                    {/* <Img src={image} /> */}
-                    <TitleContent>
-                        <HeaderThree title="Feedback">Feedback Galore!</HeaderThree>
-                        <Hr />
-                    </TitleContent>
-                    <CardInfo>Please convey your impressions!</CardInfo>
-                    <Form onSubmit={submitHandler}>
-                        <UtilityList>
-                            <TitleContent>Name</TitleContent>
-                            <Input type="text" name="name" value={name} onChange={onChange} />
-                        </UtilityList>
-                        <UtilityList>
-                            <TitleContent>Email</TitleContent>
-                            <Input type="email" name="email" value={email} onChange={onChange} />
-                        </UtilityList>
-                        <UtilityList>
-                            <TitleContent>Message</TitleContent>
-                            <TextArea rows="4" name="message" value={message} onChange={onChange} />
-                        </UtilityList>
+            <Buttons1 onClick={toggleModal}>Hey there! Click me!</Buttons1>
 
-                        <Buttons type="submit">Submit</Buttons>
-                    </Form>
-                </BlogCard>
-            </GridContainer>
+            <StyledModal isOpen={isOpen} onBackgroundClick={toggleModal} onEscapeKeydown={toggleModal}>
+                <GridContainer>
+                    <BlogCard>
+                        {/* <Img src={image} /> */}
+                        <TitleContent>
+                            <HeaderThree title="Feedback">Feedback Galore!</HeaderThree>
+                            <Hr />
+                        </TitleContent>
+                        <CardInfo>Please convey your impressions!</CardInfo>
+                        <Form onSubmit={submitHandler}>
+                            <UtilityList>
+                                <TitleContent>Name</TitleContent>
+                                <Input type="text" name="name" value={name} onChange={onChange} />
+                            </UtilityList>
+                            <UtilityList>
+                                <TitleContent>Email</TitleContent>
+                                <Input type="email" name="email" value={email} onChange={onChange} />
+                            </UtilityList>
+                            <UtilityList>
+                                <TitleContent>Message</TitleContent>
+                                <TextArea rows="4" name="message" value={message} onChange={onChange} />
+                            </UtilityList>
+
+                            <Buttons type="submit" onClick={toggleModal}>
+                                Submit
+                            </Buttons>
+                        </Form>
+                    </BlogCard>
+                </GridContainer>
+            </StyledModal>
         </Section>
     );
 };
