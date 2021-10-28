@@ -66,8 +66,8 @@ const ContactMe = () => {
     };
 
     return (
-        <Section nopadding id="contact">
-            <SectionDivider style={{ margin: '1rem 0 0rem' }} />
+        <Section id="contact">
+            <SectionDivider />
             <SectionTitle main>Contact Me</SectionTitle>
             <Buttons1 onClick={toggleModal}>Hey there! Click me!</Buttons1>
 

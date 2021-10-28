@@ -2,9 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 import Tilt from 'react-tilt';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { EffectCoverflow, Autoplay } from 'swiper';
-
-// import { useMediaQuery } from '../../utils/media';
+import { EffectCoverflow } from 'swiper';
 
 import {
     BlogCard,
@@ -21,25 +19,21 @@ import {
 } from './ProjectsStyles';
 import { Section, SectionDivider, SectionTitle } from '../../styles/GlobalComponents';
 import { projects } from '../../constants/constants';
-import useWindowDimensions from '../../utils/dimensions';
 
 const Projects = () => {
-    const { width } = useWindowDimensions();
-    console.log(width);
-
     return (
-        <Section nopadding id="projects">
-            <SectionDivider style={{ margin: '1rem 0 0rem' }} />
-            <SectionTitle main>Projects</SectionTitle>
+        <Section id="projects">
+            <SectionDivider />
+            <SectionTitle>Projects</SectionTitle>
             <FlexContainer>
                 <Swiper
                     modules={[EffectCoverflow]}
                     effect="coverflow"
+                    spaceBetween={-30}
                     slidesPerView={3}
                     loop
                     grabCursor
-                    autoplay
-                    coverflowEffect={{ rotate: 0, stretch: 0, depth: 100, modifier: 2, slideShadows: true }}
+                    coverflowEffect={{ rotate: 0, stretch: 0, depth: 100, modifier: 7, slideShadows: true }}
                 >
                     {projects.map(({ id, image, title, description, tags, source }) => (
                         <SwiperSlide>

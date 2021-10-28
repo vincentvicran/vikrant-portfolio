@@ -39,7 +39,7 @@ export const BlogCard = styled.div`
     text-align: center;
     width: 400px;
     backdrop-filter: blur(15px);
-    background-color: rgba(52, 0, 102, 0.15);
+    background-color: rgba(52, 0, 102, 0.1);
     @media ${(props) => props.theme.breakpoints.sm} {
         width: 100%;
     }

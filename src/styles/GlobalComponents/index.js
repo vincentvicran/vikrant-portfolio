@@ -3,13 +3,10 @@ import styled from 'styled-components';
 export const Section = styled.section`
     display: ${(props) => (props.grid ? 'grid' : 'flex')};
     flex-direction: ${(props) => (props.row ? 'row' : 'column')};
-    padding: ${(props) => (props.nopadding ? '0' : '32px 48px 0')};
-    margin: 0 auto;
-    max-width: 1040px;
-    box-sizing: content-box;
+    margin: 0 10% 200px;
     position: relative;
     overflow: hidden;
-    grid-template-columns: 1fr 1fr;
+    flex: 2;
 
     @media ${(props) => props.theme.breakpoints.md} {
         padding: 24px 48px 0;
@@ -17,12 +14,24 @@ export const Section = styled.section`
     }
 
     @media ${(props) => props.theme.breakpoints.sm} {
-        display: ${(props) => (props.grid ? 'flex' : 'flex')};
-
-        padding: ${(props) => (props.nopadding ? '0' : '16px 16px 0')};
-
-        width: calc(100vw - 32px);
+        display: flex;
+        flex: 1;
+        margin: 0 2% 100px;
         flex-direction: column;
+    }
+`;
+
+export const LeftSection = styled.div`
+    display: grid;
+    position: relative;
+    overflow: hidden;
+    grid-template-columns: 1fr 1fr;
+
+    @media ${(props) => props.theme.breakpoints.sm} {
+        display: flex;
+        flex-direction: column;
+
+        margin: 0;
     }
 `;
 
@@ -36,13 +45,11 @@ export const SectionTitle = styled.h2`
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     margin-bottom: 16px;
-    padding: ${(props) => (props.main ? '58px 0 16px' : '0')};
 
     @media ${(props) => props.theme.breakpoints.md} {
         font-size: ${(props) => (props.main ? '56px' : '48px')};
         line-height: ${(props) => (props.main ? '56px' : '48px')};
         margin-bottom: 12px;
-        padding: ${(props) => (props.main ? '40px 0 12px' : '0')};
     }
 
     @media ${(props) => props.theme.breakpoints.sm} {
@@ -51,7 +58,6 @@ export const SectionTitle = styled.h2`
         font-size: ${(props) => (props.main ? '28px' : '32px')};
         line-height: ${(props) => (props.main ? '32px' : '40px')};
         margin-bottom: 8px;
-        padding: ${(props) => (props.main ? '16px 0 8px' : '0')};
         max-width: 100%;
     }
 `;
@@ -81,6 +87,7 @@ export const SectionText = styled.p`
 export const SectionDivider = styled.div`
     width: 64px;
     height: 6px;
+    margin: 1rem 0 3rem;
     border-radius: 10px;
     background-color: #fff;
     background: ${(props) =>
@@ -104,8 +111,9 @@ export const SectionSubText = styled.p`
     max-width: 800px;
     font-weight: 300;
     font-size: 18px;
-    line-height: 32px;
+    line-height: 24px;
     color: rgba(255, 255, 255, 0.75);
+    padding: 10px 0;
 
     @media ${(props) => props.theme.breakpoints.md} {
         max-width: 672px;

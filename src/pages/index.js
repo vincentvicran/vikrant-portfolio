@@ -8,7 +8,7 @@ import Projects from '../components/Projects/Projects';
 import Technologies from '../components/Technologies/Technologies';
 import Timeline from '../components/TimeLine/TimeLine';
 import { Layout } from '../layout/Layout';
-import { Section } from '../styles/GlobalComponents';
+import { LeftSection } from '../styles/GlobalComponents';
 
 const Home = () => {
     return (
@@ -24,10 +24,10 @@ const Home = () => {
                 draggable
                 pauseOnHover
             />
-            <Section grid>
+            <LeftSection>
                 <Hero />
                 <BgAnimation />
-            </Section>
+            </LeftSection>
             <Projects />
             <Technologies />
             <Timeline />
