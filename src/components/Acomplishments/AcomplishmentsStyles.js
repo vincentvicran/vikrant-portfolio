@@ -5,8 +5,8 @@ export const Boxes = styled.div`
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    margin: 24px 0 40px;
-
+    margin: 24px 60px 40px;
+    z-index: 10px;
     @media ${(props) => props.theme.breakpoints.md} {
         margin: 20px 0 32px;
     }
@@ -19,12 +19,18 @@ export const Boxes = styled.div`
 `;
 
 export const Box = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    flex-wrap: wrap;
     background: #212d45;
     border-radius: 12px;
     height: 200px;
     padding: 12px;
     width: 280px;
     margin: 10px;
+    z-index: 5;
     @media ${(props) => props.theme.breakpoints.lg} {
         height: 200px;
         padding: 12px;
@@ -43,6 +49,14 @@ export const Box = styled.div`
         width: 280px;
         margin: 10px;
     }
+    transition: all 0.5s ease 0.1s;
+    &:hover {
+        z-index: 20;
+        overflow: visible;
+        transform: scale(1.29);
+        backdrop-filter: blur(15px);
+        background-color: rgba(52, 0, 102, 0.1);
+    }
 `;
 export const BoxNum = styled.h5`
     font-style: normal;
@@ -52,6 +66,7 @@ export const BoxNum = styled.h5`
     letter-spacing: 0.01em;
     color: #ffffff;
     margin-bottom: 8px;
+    transition: all 0.5s ease 0.1s;
 
     @media ${(props) => props.theme.breakpoints.md} {
         font-size: 28px;
@@ -70,6 +85,7 @@ export const BoxText = styled.p`
     line-height: 24px;
     letter-spacing: 0.02em;
     color: rgba(255, 255, 255, 0.75);
+    transition: all 0.5s ease 0.1s;
 
     @media ${(props) => props.theme.breakpoints.md} {
         font-size: 16px;

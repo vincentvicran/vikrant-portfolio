@@ -83,13 +83,22 @@ export const SubListItem = styled.li`
     margin: 12px;
     width: 80px;
     padding: 10px 30px;
-
+    z-index: 5;
     align-items: center;
     justify-content: start;
     @media ${(props) => props.theme.breakpoints.sm} {
         width: 70px;
         margin: 0 2px;
         padding: 10px;
+    }
+
+    transition: all 0.5s ease 0.1s;
+    &:hover {
+        transform: scale(1.5);
+        backdrop-filter: blur(1px);
+        background-color: rgba(52, 0, 102, 0.1);
+        border: 1px dotted gray;
+        border-radius: 7px 0 7px 7px;
     }
 `;
 
