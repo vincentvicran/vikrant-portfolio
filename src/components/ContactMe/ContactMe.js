@@ -90,8 +90,8 @@ const ContactMe = () => {
                     Hey there! Click me!
                 </Buttons1>
             </LeftSection>
-            //!form submission canceled because form is not connected.//*solution is to give type="submit" to form
-            //*button and type="button" to all other buttons
+            {/* //!form submission canceled because form is not connected.//*solution is to give type="submit" to form
+            //*button and type="button" to all other buttons */}
             <StyledModal isOpen={isOpen} onBackgroundClick={toggleModal} onEscapeKeydown={toggleModal}>
                 <GridContainer>
                     <BlogCard>

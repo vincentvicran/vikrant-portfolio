@@ -14,13 +14,7 @@ export const LeftSection = styled.div`
     display: flex;
     flex-direction: column;
     margin: 0;
-
-    @media ${(props) => props.theme.breakpoints.sm} {
-        display: flex;
-        flex-direction: column;
-
-        margin: 0;
-    }
+    cursor: pointer;
 `;
 
 export const Img = styled.img`
@@ -29,6 +23,7 @@ export const Img = styled.img`
     object-fit: cover;
     overflow: hidden;
     align-self: center;
+    z-index: 5;
 `;
 
 export const GridContainer = styled.section`
@@ -119,6 +114,7 @@ export const Buttons = styled.button`
     background: #6b3030;
     border-radius: 15px;
     transition: 0.5s;
+    z-index: 5;
     cursor: pointer;
     &:hover {
         background: #801414;
@@ -133,6 +129,8 @@ export const Buttons1 = styled.button`
     margin: auto;
     color: #d4c0c0;
     border: 0;
+    z-index: 5;
+
     font-size: 1.6rem;
     border-radius: 15px;
     transition: 0.5s;

@@ -7,6 +7,7 @@ export const HeroSection = styled.section`
     width: 700px;
     position: relative;
     overflow: hidden;
+    z-index: 5;
 
     @media ${(props) => props.theme.breakpoints.md} {
         padding: 24px 48px 0;

@@ -1,5 +1,5 @@
 import React from 'react';
-import { GrProjects, GrConfigure, GrUserExpert, GrContact } from 'react-icons/gr';
+import { GrHome, GrProjects, GrConfigure, GrUserExpert, GrContact } from 'react-icons/gr';
 import { FaInstalod } from 'react-icons/fa';
 import { Fab, Action } from 'react-tiny-fab';
 
@@ -17,6 +17,9 @@ const SideButton = () => {
             </Action>
             <Action text="Projects" onClick={() => (window.location.href = '#projects')}>
                 <GrProjects />
+            </Action>
+            <Action text="Home" onClick={() => (window.location.href = '#')}>
+                <GrHome />
             </Action>
         </Fab>
     );

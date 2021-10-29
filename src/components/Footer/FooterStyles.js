@@ -17,6 +17,7 @@ export const LinkItem = styled.a`
     color: rgba(255, 255, 255, 0.75);
     margin-bottom: 16px;
     transition: 0.3s ease;
+    z-index: 5;
 
     &:hover {
         color: #fff;
@@ -41,6 +42,7 @@ export const LinkItem = styled.a`
 export const SocialIconsContainer = styled.div`
     display: flex;
     justify-content: space-between;
+    z-index: 5;
 
     @media ${(props) => props.theme.breakpoints.md} {
         display: flex;
@@ -96,6 +98,7 @@ export const Slogan = styled.p`
 export const SocialContainer = styled.div`
     display: flex;
     align-items: center;
+    z-index: 5;
 
     @media ${(props) => props.theme.breakpoints.md} {
         justify-content: center;

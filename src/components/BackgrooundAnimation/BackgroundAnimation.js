@@ -3,8 +3,8 @@ import React from 'react';
 const BackgroundAnimation = () => {
     return (
         <div>
-            <svg width="500px" height="400px" viewBox="0 0 652 652" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <g opacity="0.15">
+            <svg width="500px" height="400px" viewBox="0 0 552 552" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g opacity="0.25">
                     <path
                         fillRule="evenodd"
                         clipRule="evenodd"
