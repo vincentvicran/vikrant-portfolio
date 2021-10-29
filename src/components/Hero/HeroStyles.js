@@ -3,14 +3,15 @@ import styled from 'styled-components';
 export const HeroSection = styled.section`
     display: flex;
     flex-direction: column;
-    margin: 90px 18%;
+    margin: 17% 18% 25%;
     width: 700px;
     position: relative;
     overflow: hidden;
-    z-index: 5;
 
     @media ${(props) => props.theme.breakpoints.md} {
         padding: 24px 48px 0;
+        margin: 90px 18%;
+
         flex-direction: column;
     }
 

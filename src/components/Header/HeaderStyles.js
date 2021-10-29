@@ -2,19 +2,13 @@ import { IoIosArrowDropdown } from 'react-icons/io';
 import styled from 'styled-components';
 
 export const Container = styled.div`
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: 1fr;
-    grid-column-gap: 2rem;
-    padding: 1rem;
-    padding-top: 2rem;
-
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    padding: 2rem;
+    z-index: 5px;
     @media ${(props) => props.theme.breakpoints.sm} {
-        display: grid;
-        grid-template-columns: repeat(5, 1fr);
-        grid-template-rows: repeat(2, 60px);
-        grid-column-gap: 0.5rem;
-        grid-row-gap: 0.5rem;
     }
 `;
 
@@ -23,26 +17,22 @@ export const Span = styled.span`
 `;
 
 export const Div1 = styled.div`
-    grid-area: 1 / 1 / 2 / 2;
     display: flex;
     flex-direction: row;
+    z-index: 5px;
     align-content: center;
-    @media ${(props) => props.theme.breakpoints.sm} {
-        grid-area: 1 / 1 / 2 / 3;
-    }
 `;
 export const Div2 = styled.div`
-    grid-area: 1 / 2 / 2 / 4;
     display: flex;
-    justify-content: space-around;
+    z-index: 5px;
     @media ${(props) => props.theme.breakpoints.sm} {
         display: none;
         overflow: hidden;
     }
 `;
 export const Div3 = styled.div`
-    grid-area: 1 / 5 / 2 / 6;
     display: flex;
+    z-index: 5px;
     justify-content: space-around;
     align-items: center;
     @media ${(props) => props.theme.breakpoints.sm} {
@@ -55,6 +45,7 @@ export const Div3 = styled.div`
 export const NavLink = styled.a`
     font-size: 2rem;
     line-height: 32px;
+    z-index: 5px;
     color: rgba(255, 255, 255, 0.75);
     transition: 0.4s ease;
     &:hover {
@@ -71,6 +62,7 @@ export const NavLink = styled.a`
 export const ContactDropDown = styled.button`
     border: none;
     display: flex;
+    z-index: 5px;
     position: relative;
     background: none;
     font-size: 1.7rem;
@@ -97,6 +89,7 @@ export const ContactDropDown = styled.button`
 
 export const NavProductsIcon = styled(IoIosArrowDropdown)`
     margin-left: 8px;
+    z-index: 5px;
     display: flex;
     align-self: center;
     transition: 0.3s ease;
@@ -117,12 +110,17 @@ export const NavProductsIcon = styled(IoIosArrowDropdown)`
 
 export const SocialIcons = styled.a`
     transition: 0.3s ease;
+    z-index: 5px;
+    font-size: 24px;
     color: white;
     border-radius: 50px;
-    padding: 8px;
+    padding: 10px;
     &:hover {
         background-color: #212d45;
         transform: scale(1.2);
         cursor: pointer;
+    }
+    @media ${(props) => props.theme.breakpoints.sm} {
+        padding-top: 0;
     }
 `;

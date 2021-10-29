@@ -2,7 +2,7 @@ import React from 'react';
 import Particles from 'react-particles-js';
 import particlesConfig from '../../utils/Particles/particlesConfig.json';
 
-export default () => (
+export const ParticleComponent = () => (
     <div
         style={{
             position: 'absolute',
@@ -16,3 +16,5 @@ export default () => (
         <Particles params={particlesConfig} />
     </div>
 );
+
+export default ParticleComponent;
