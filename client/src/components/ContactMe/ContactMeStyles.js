@@ -53,6 +53,7 @@ export const BlogCard = styled.div`
     padding: 50px;
     text-align: center;
     width: 400px;
+    -webkit-backdrop-filter: blur(15px);
     backdrop-filter: blur(15px);
     background-color: rgba(52, 0, 102, 0.1);
     @media ${(props) => props.theme.breakpoints.sm} {

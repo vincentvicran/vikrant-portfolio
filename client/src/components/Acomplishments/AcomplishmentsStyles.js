@@ -42,6 +42,7 @@ export const Box = styled.div`
         z-index: 20;
         overflow: visible;
         transform: scale(1.29);
+        -webkit-backdrop-filter: blur(15px);
         backdrop-filter: blur(15px);
         background-color: rgba(52, 0, 102, 0.1);
     }

@@ -25,15 +25,14 @@ router.post('/contactme', (req, res) => {
 
     //   we create a transporter
     let smtpTransport = nodemailer.createTransport({
-        service: 'Gmail',
-        // the connect port
-        port: 465,
-
-        // authenticate
+        host: process.env.EMAIL_HOST,
+        port: process.env.EMAIL_PORT,
         auth: {
-            user: 'vvicran@gmail.com',
-            pass: 'YetGO98&^',
+            user: process.env.EMAIL_USERNAME,
+            pass: process.env.EMAIL_PASSWORD,
         },
+        debug: true,
+        logger: true,
     });
 
     // define the mailoptions
@@ -44,7 +43,7 @@ router.post('/contactme', (req, res) => {
         html: `
     
     <h3>Informations</h3>
-    <ul>
+    <ul type="none">
     <li>Name: ${data.name}</li>
     <li>Email: ${data.email}</li>
    

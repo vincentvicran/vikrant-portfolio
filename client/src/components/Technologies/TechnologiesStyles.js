@@ -95,6 +95,7 @@ export const SubListItem = styled.li`
     transition: all 0.5s ease 0.1s;
     &:hover {
         transform: scale(1.5);
+        -webkit-backdrop-filter: blur(1px);
         backdrop-filter: blur(1px);
         background-color: rgba(52, 0, 102, 0.1);
         border: 1px dotted gray;
