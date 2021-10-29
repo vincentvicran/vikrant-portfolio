@@ -7,6 +7,7 @@ export const StyledModal = Modal.styled`
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 100000;
   background-color: ${(props) => props.theme.colors.white};
 `;
 
@@ -23,7 +24,12 @@ export const Img = styled.img`
     object-fit: cover;
     overflow: hidden;
     align-self: center;
-    z-index: 5;
+    z-index: 4;
+    transition: all 0.5s ease 0.1s;
+    &:hover {
+        overflow: hidden;
+        transform: scale(1.5);
+    }
 `;
 
 export const GridContainer = styled.section`

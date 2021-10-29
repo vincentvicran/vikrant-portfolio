@@ -11,7 +11,7 @@ import {
     DiReact,
 } from 'react-icons/di';
 import { IoMailOutline } from 'react-icons/io5';
-import { SiDotnet, SiMysql, SiNextdotjs } from 'react-icons/si';
+import { SiDotnet, SiMysql, SiNextdotjs, SiStyledcomponents } from 'react-icons/si';
 import { Section, SectionDivider, SectionText, SectionTitle } from '../../styles/GlobalComponents';
 import { List, SubList, ListItem, TechSubText, SubListItem, ListParagraph, ListTitle } from './TechnologiesStyles';
 
@@ -60,6 +60,10 @@ const Technologies = () => (
                     <SubListItem style={style}>
                         <SiNextdotjs size="2rem" />
                         <ListParagraph>NextJS</ListParagraph>
+                    </SubListItem>
+                    <SubListItem style={style}>
+                        <SiStyledcomponents size="2rem" />
+                        <ListParagraph>Styled</ListParagraph>
                     </SubListItem>
                 </SubList>
             </ListItem>

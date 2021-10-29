@@ -40,10 +40,6 @@ const ContactMe = () => {
     const submitHandler = async (e) => {
         e.preventDefault();
 
-        if (!navigator.online) {
-            toast.error('Oops! You are offline!');
-        }
-
         try {
             const res = await axios.post(`http://localhost:3300/contactme`, feedData, {
                 headers: {
@@ -51,9 +47,10 @@ const ContactMe = () => {
                 },
             });
 
-            console.log(res);
-
-            if (name.length === 0 || email.length === 0 || message.length === 0) {
+            if (!res) {
+                console.log(res);
+                toast.error('Oops! Check your connection!');
+            } else if (name.length === 0 || email.length === 0 || message.length === 0) {
                 toast.error(res.data.msg);
             } else if (res.status === 200) {
                 toast.success(res.data.msg);

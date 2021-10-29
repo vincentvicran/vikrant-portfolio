@@ -33,7 +33,7 @@ export const LinkItem = styled.a`
     @media ${(props) => props.theme.breakpoints.sm} {
         font-size: 8px;
         line-height: 14px;
-        margin-bottom: 8px;
+        margin: 8px;
         display: flex;
         align-items: center;
     }
@@ -124,7 +124,7 @@ export const LinkList = styled.ul`
     }
     @media ${(props) => props.theme.breakpoints.sm} {
         width: 100%;
-        padding: 32px 4px 16px;
+        padding: 32px 30px 16px;
     }
 `;
 

@@ -116,16 +116,13 @@ export const ListTitle = styled.h4`
 export const ListParagraph = styled.p`
     font-size: 14px;
     line-height: 30px;
+    padding: 5px;
+    text-align: center;
     color: rgba(255, 255, 255, 0.75);
 
-    @media ${(props) => props.theme.breakpoints.md} {
-        font-size: 16px;
-        line-height: 28px;
-    }
-
     @media ${(props) => props.theme.breakpoints.sm} {
-        font-size: 14px;
-        line-height: 22px;
+        font-size: 12px;
+        line-height: 12px;
     }
 `;
 
