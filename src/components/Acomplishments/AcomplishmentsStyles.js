@@ -14,7 +14,7 @@ export const Boxes = styled.div`
     @media ${(props) => props.theme.breakpoints.sm} {
         display: flex;
         width: 70%;
-        margin: 24px auto;
+        margin: 24px 10%;
     }
 `;
 
@@ -31,25 +31,13 @@ export const Box = styled.div`
     width: 280px;
     margin: 10px;
     z-index: 5;
-    @media ${(props) => props.theme.breakpoints.lg} {
-        height: 200px;
-        padding: 12px;
-        width: 280px;
-        margin: 10px;
-    }
-
-    @media ${(props) => props.theme.breakpoints.md} {
-        height: 135px;
-        padding: 16px;
-    }
+    transition: all 0.5s ease 0.1s;
 
     @media ${(props) => props.theme.breakpoints.sm} {
         height: 110px;
-        padding: 12px;
-        width: 280px;
-        margin: 10px;
+        width: 200px;
     }
-    transition: all 0.5s ease 0.1s;
+
     &:hover {
         z-index: 20;
         overflow: visible;
