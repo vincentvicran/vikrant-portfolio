@@ -20,9 +20,6 @@
     ],
     "author": "Vikrant Shrestha",
     "license": "MIT",
-    "bugs": {
-        "url": "https://github.com/vincentvicran/vikrant-portfolio/issues"
-    },
     "dependencies": {
         "concurrently": "^6.3.0",
         "cors": "^2.8.5",
