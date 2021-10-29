@@ -1,0 +1,34 @@
+{
+    "name": "vikrant-portfolio",
+    "version": "1.0.0",
+    "description": "Dynamic Personal Portfolio",
+    "main": "app.js",
+    "scripts": {
+        "start": "node app.js",
+        "dev": "nodemon app",
+        "prod": "nodemon app",
+        "heroku-postbuild": "npm install --prefix client && npm run build --prefix client",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git"
+    },
+    "keywords": [
+        "portfolio",
+        "react",
+        "node"
+    ],
+    "author": "Vikrant Shrestha",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/vincentvicran/vikrant-portfolio/issues"
+    },
+    "dependencies": {
+        "concurrently": "^6.3.0",
+        "cors": "^2.8.5",
+        "dotenv": "^10.0.0",
+        "express": "^4.17.1",
+        "nodemailer": "^6.7.0",
+        "nodemon": "^2.0.14"
+    }
+}
