@@ -11,6 +11,7 @@
         "axios": "^0.24.0",
         "next": "12.0.1",
         "node-sass": "^6.0.1",
+        "nodemailer": "^6.7.0",
         "react": "17.0.2",
         "react-dom": "17.0.2",
         "react-icons": "^4.2.0",
@@ -22,6 +23,5 @@
         "styled-react-modal": "^2.1.0",
         "swiper": "^7.2.0",
         "tsparticles": "^1.37.0"
-    },
-    "proxy": "http://localhost:3300"
+    }
 }

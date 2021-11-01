@@ -43,7 +43,7 @@ const ContactMe = () => {
         e.preventDefault();
 
         try {
-            const res = await axios.post(`/contactme`, feedData, {
+            const res = await axios.post(`api/contact`, feedData, {
                 headers: {
                     'Content-Type': 'application/json',
                 },
