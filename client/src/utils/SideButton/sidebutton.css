@@ -1,0 +1,208 @@
+.fab-container {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+.fab {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 60px;
+    height: 60px;
+    font-size: 22px;
+    background: gray;
+    color: black;
+    border-radius: 100%;
+    z-index: 100;
+    background-color: rgb(4, 100, 179, 0.5);
+    -webkit-backdrop-filter: blur(15px);
+    backdrop-filter: blur(15px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+.fab-i {
+    color: black;
+    z-index: 100;
+    -moz-transition: all 0.2s linear;
+    -webkit-transition: all 0.2s linear;
+    transition: all 0.2s linear;
+}
+
+.fab-i#rotate {
+    -ms-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+}
+
+.fab-options {
+    position: absolute;
+    bottom: 60px;
+    right: 0;
+    border-radius: 10px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.25);
+    transition: all 0.3s ease;
+    transform: scale(0);
+    transform-origin: 50% bottom;
+}
+
+.fab-options#option {
+    transform: scale(1);
+}
+
+.fab-li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    list-style: none;
+    width: 50px;
+    height: 50px;
+    padding: 5px;
+    margin: 5px;
+}
+
+.fab-icon-holder {
+    text-align: center;
+    padding: 7px;
+    position: relative;
+    color: #fff;
+    text-decoration: none;
+    z-index: 1000;
+    width: 50px;
+    height: 40px;
+    border-radius: 17px;
+    background-color: rgba(0, 0, 0, 0.2);
+    -webkit-backdrop-filter: blur(15px);
+    backdrop-filter: blur(15px);
+}
+
+.fab-icon-holder:hover,
+.fab-icon-holder #active {
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+}
+
+.fab-options-i {
+    font-size: 22px;
+    pointer-events: none;
+    -moz-transition: all 2s linear;
+    -webkit-transition: all 2s linear;
+    transition: all 2s linear;
+}
+
+.fab-li:hover .fab-icon-holder .fab-options-i {
+    opacity: 1;
+}
+
+#marker,
+#menu-marker {
+    content: '';
+    position: absolute;
+    top: 0;
+    transition: 0.5s;
+    z-index: 1;
+    width: 20px;
+    height: 25px;
+    border-radius: 8px;
+    background: #5da6ff;
+    transform: translate(0, 50%);
+    box-shadow: 0 0 10px #5da6ff, 0 0 15px #5da6ff, 0 0 20px #5da6ff, 0 0 25px #5da6ff;
+}
+
+#menu-marker {
+    height: 20px;
+    z-index: 0;
+    border-radius: 100%;
+    transform: translate(0, 85%);
+}
+
+#marker.home,
+#marker.projects,
+#marker.tech,
+#marker.about,
+#marker.contact {
+    transform: translate(0, 0%);
+}
+
+.button {
+    z-index: 5;
+    width: 262px;
+    height: 64px;
+    border-radius: 20px 0 20px 0;
+    font-size: 24px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    letter-spacing: 2px;
+    margin: 20px 10px 40px;
+    color: #fff;
+    background-color: rgb(4, 100, 179, 0.2);
+    -webkit-backdrop-filter: blur(15px);
+    backdrop-filter: blur(15px);
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.button:hover {
+    border-radius: 20px 0 20px 0;
+    background: #5da6ff;
+    box-shadow: 0 0 10px #5da6ff, 0 0 15px #5da6ff, 0 0 20px #5da6ff, 0 0 25px #5da6ff;
+}
+
+.button::before {
+    content: '';
+    position: absolute;
+    width: 40px;
+    height: 300px;
+    border-radius: 20px 0 20px 0;
+    background: #5da6ff;
+    transition: 1s;
+    animation: animate 2s linear infinite;
+    animation-delay: 0.33s;
+}
+
+.button:hover::before {
+    width: 100px;
+}
+
+@keyframes animate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.button::after {
+    content: '';
+    position: absolute;
+    inset: 4px;
+    border-radius: 20px 0 20px 0;
+    background-color: rgb(4, 100, 179, 1);
+}
+
+.button:hover::after {
+    background: #5da6ff;
+}
+
+.button .span {
+    position: relative;
+    z-index: 20;
+    font-size: 24px;
+    color: #fff;
+    opacity: 0.5;
+    letter-spacing: 2px;
+    transition: 0.5s;
+}
+
+.button:hover .span {
+    opacity: 1;
+}

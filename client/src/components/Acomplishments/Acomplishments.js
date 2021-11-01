@@ -1,7 +1,7 @@
 import React from 'react';
 
-import { Section, SectionDivider, SectionTitle } from '../../styles/GlobalComponents';
-import { Box, Boxes, BoxNum, BoxText } from './AcomplishmentsStyles';
+import { Section, SectionDivider } from '../../styles/GlobalComponents';
+import { AccomSectionTitle, Box, Boxes, BoxNum, BoxText } from './AcomplishmentsStyles';
 
 import Tilt from 'react-tilt';
 
@@ -22,7 +22,7 @@ const options = {
 const Acomplishments = () => (
     <Section>
         <SectionDivider style={{ margin: '1rem 0 3rem' }} />
-        <SectionTitle>Personal Accomplishment</SectionTitle>
+        <AccomSectionTitle>Personal Accomplishment</AccomSectionTitle>
         <Boxes>
             {AccomplishmentData.map((card, index) => (
                 <Tilt style={{ zIndex: '15' }} options={options}>

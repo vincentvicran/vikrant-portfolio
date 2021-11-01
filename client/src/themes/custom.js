@@ -1,7 +1,7 @@
 export default {
     // Temp fonts
     fonts: {
-        title: 'Josefin Sans, sans-serif',
+        title: 'Comfortaa, cursive',
         main: 'Josefin Sans, sans-serif',
     },
     // Colors for layout

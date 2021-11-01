@@ -48,6 +48,7 @@ export const GridContainer = styled.section`
 `;
 export const BlogCard = styled.div`
     border-radius: 10px;
+    position: relative;
     margin: 0 50px;
     box-shadow: 3px 3px 20px rgba(80, 78, 78, 0.5);
     padding: 50px;
@@ -60,6 +61,17 @@ export const BlogCard = styled.div`
         width: 100%;
     }
 `;
+
+export const CloseButton = styled.div`
+    position: absolute;
+    top: 40px;
+    right: 20px;
+    padding: 10px;
+    color: white;
+    font-size: 22px;
+    cursor: pointer;
+`;
+
 export const TitleContent = styled.div`
     text-align: center;
     z-index: 20;

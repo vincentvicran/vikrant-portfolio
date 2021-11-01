@@ -64,3 +64,10 @@ export const HeroSectionSubText = styled.p`
         line-height: 22px;
     }
 `;
+
+//  linear-gradient(270deg, #ff622e 0%, #b133ff 100%)
+
+// background: ${({ alt }) =>
+//         alt
+//             ? 'linear-gradient(270deg, #ff622e 0%, #B133FF 100%)'
+//             : 'linear-gradient(270deg, #00DBD8 0%, #B133FF 100%)'};

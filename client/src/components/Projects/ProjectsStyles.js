@@ -2,12 +2,16 @@ import styled from 'styled-components';
 
 export const FlexContainer = styled.section`
     display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
     @media ${(props) => props.theme.breakpoints.sm} {
         padding-bottom: 0;
         position: relative;
         // left: -100px;
     }
 `;
+
 export const BlogCard = styled.div`
     border-radius: 10px;
     box-shadow: 3px 3px 20px rgba(80, 78, 78, 0.5);
@@ -15,16 +19,16 @@ export const BlogCard = styled.div`
     padding: 3rem;
     background-color: rgba(30, 19, 34, 0.95);
     width: 300px;
-    height: auto;
+    height: 590px;
+    margin: auto;
 
     @media ${(props) => props.theme.breakpoints.sm} {
-        width: 200px;
+        width: 100%;
     }
 `;
 
 export const Img = styled.img`
     width: 100%;
-    height: 100%;
     object-fit: cover;
 `;
 export const TitleContent = styled.div`
@@ -108,4 +112,18 @@ export const TagList = styled.ul`
 export const Tag = styled.li`
     color: #d8bfbf;
     font-size: 1.5rem;
+`;
+
+export const Info = styled.p`
+    width: 100%;
+    padding: 20px;
+    color: gray;
+    line-height: 24px;
+    font-size: 14px;
+    text-align: center;
+    @media ${(props) => props.theme.breakpoints.sm} {
+        padding: 0.3rem;
+        font-size: 12px;
+        line-height: 16px;
+    }
 `;

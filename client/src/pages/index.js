@@ -10,6 +10,8 @@ import Timeline from '../components/TimeLine/TimeLine';
 import { Layout } from '../layout/Layout';
 import { LeftSection } from '../styles/GlobalComponents';
 
+import SideButton from '../utils/SideButton/SideButton';
+
 const Home = () => {
     return (
         <Layout>
@@ -33,6 +35,7 @@ const Home = () => {
             <Timeline />
             <Acomplishments />
             <ContactMe />
+            <SideButton />
         </Layout>
     );
 };

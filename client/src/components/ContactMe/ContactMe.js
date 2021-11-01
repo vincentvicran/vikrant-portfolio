@@ -4,7 +4,7 @@ import { toast } from 'react-toastify';
 import { StyledModal } from './ContactMeStyles';
 import { GiClick } from 'react-icons/gi';
 import { GrNorton } from 'react-icons/gr';
-import { LeftSection } from './ContactMeStyles';
+import { FaWindowClose } from 'react-icons/fa';
 
 import {
     BlogCard,
@@ -12,6 +12,7 @@ import {
     GridContainer,
     HeaderThree,
     Hr,
+    LeftSection,
     TitleContent,
     UtilityList,
     Buttons,
@@ -20,6 +21,7 @@ import {
     Input,
     Img,
     TextArea,
+    CloseButton,
 } from './ContactMeStyles';
 import { Section, SectionDivider, SectionTitle } from '../../styles/GlobalComponents';
 
@@ -97,6 +99,9 @@ const ContactMe = () => {
                             <HeaderThree title="Feedback">Feedback Galore!</HeaderThree>
                             <Hr />
                         </TitleContent>
+                        <CloseButton onClick={toggleModal}>
+                            <FaWindowClose />
+                        </CloseButton>
                         <CardInfo>Please convey your impressions!</CardInfo>
                         <Form onSubmit={submitHandler}>
                             <UtilityList>

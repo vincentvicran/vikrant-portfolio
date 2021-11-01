@@ -1,13 +1,12 @@
 import React, { useState, useEffect } from 'react';
-
+import Link from 'next/link';
 import Tilt from 'react-tilt';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { EffectCoverflow } from 'swiper';
+import { EffectCoverflow, Pagination } from 'swiper';
 
 import {
     BlogCard,
     CardInfo,
-    ExternalLinks,
     HeaderThree,
     FlexContainer,
     Hr,
@@ -17,11 +16,24 @@ import {
     UtilityList,
     Img,
     Buttons,
+    Info,
 } from './ProjectsStyles';
 import { Section, SectionDivider, SectionTitle } from '../../styles/GlobalComponents';
 import { projects } from '../../constants/constants';
 import { DiCode } from 'react-icons/di';
 import { GiStack } from 'react-icons/gi';
+
+const options = {
+    reverse: false, // reverse the tilt direction
+    max: 5, // max tilt rotation (degrees)
+    perspective: 1000, // Transform perspective, the lower the more extreme the tilt gets.
+    scale: 1, // 2 = 200%, 1.5 = 150%, etc..
+    speed: 300, // Speed of the enter/exit transition
+    transition: true, // Set a transition on enter/exit.
+    axis: null, // What axis should be disabled. Can be X or Y.
+    reset: true,
+    easing: 'cubic-bezier(.03,.98,.52,.99)',
+};
 
 const Projects = () => {
     return (
@@ -30,30 +42,20 @@ const Projects = () => {
             <SectionTitle>Projects</SectionTitle>
             <FlexContainer>
                 <Swiper
-                    modules={[EffectCoverflow]}
+                    modules={[EffectCoverflow, Pagination]}
                     effect="coverflow"
-                    spaceBetween={-30}
-                    slidesPerView={3}
-                    loop
+                    initialSlide={1}
+                    spaceBetween={0}
+                    slidesPerView={1}
+                    pagination={{ clickable: true }}
                     grabCursor
-                    coverflowEffect={{ rotate: 0, stretch: 0, depth: 100, modifier: 7, slideShadows: true }}
+                    centeredSlides={true}
+                    coverflowEffect={{ rotate: 0, stretch: 0, depth: 100, modifier: 2, slideShadows: false }}
                 >
-                    {projects.map(({ id, image, title, description, tags, source }) => (
-                        <SwiperSlide>
-                            <Tilt
-                                options={{
-                                    reverse: false, // reverse the tilt direction
-                                    max: 5, // max tilt rotation (degrees)
-                                    perspective: 1000, // Transform perspective, the lower the more extreme the tilt gets.
-                                    scale: 1, // 2 = 200%, 1.5 = 150%, etc..
-                                    speed: 300, // Speed of the enter/exit transition
-                                    transition: true, // Set a transition on enter/exit.
-                                    axis: null, // What axis should be disabled. Can be X or Y.
-                                    reset: true,
-                                    easing: 'cubic-bezier(.03,.98,.52,.99)',
-                                }}
-                            >
-                                <BlogCard key={id} activeClassName="selected">
+                    {projects.map(({ id, image, title, description, tags, source }, index) => (
+                        <SwiperSlide key={id}>
+                            <Tilt options={options} key={id}>
+                                <BlogCard key={id}>
                                     <Img src={image} />
                                     <TitleContent>
                                         <HeaderThree title={title}>{title}</HeaderThree>
@@ -81,10 +83,14 @@ const Projects = () => {
                                         </TagList>
                                     </div>
                                     <UtilityList>
-                                        <Buttons href={source} target="_blank">
-                                            <DiCode style={{ fontSize: '30px' }} />
-                                            <p style={{ padding: '5px 5px 0 0' }}>Source</p>
-                                        </Buttons>
+                                        <Link href={source} passHref>
+                                            <a target="_blank" rel="noreferer">
+                                                <Buttons>
+                                                    <DiCode style={{ fontSize: '30px' }} />
+                                                    <p style={{ padding: '5px 5px 0 0' }}>Source</p>
+                                                </Buttons>
+                                            </a>
+                                        </Link>
                                     </UtilityList>
                                 </BlogCard>
                             </Tilt>
@@ -92,49 +98,16 @@ const Projects = () => {
                     ))}
                 </Swiper>
             </FlexContainer>
+            <Info>--- Swipe for more ---</Info>
         </Section>
     );
 };
 
 export default Projects;
 
-const ProjectCards = () => (
-    <SwiperSlide>
-        {projects.map(({ id, image, title, description, tags, source }) => (
-            <Tilt options={{ max: 10 }}>
-                <BlogCard key={id} activeClassName="selected">
-                    <Img src={image} />
-                    <TitleContent>
-                        <HeaderThree title={title}>{title}</HeaderThree>
-                        <Hr />
-                    </TitleContent>
-                    <CardInfo>{description}</CardInfo>
-                    <div>
-                        <TitleContent
-                            style={{
-                                margin: '10px auto 0',
-                                fontSize: '20px',
-                                padding: '5px 0 5px',
-                                border: '1px dotted gray',
-                                borderRadius: '7px 0 7px 0',
-                                width: '100px',
-                            }}
-                        >
-                            Stack
-                        </TitleContent>
-                        <TagList>
-                            {tags.map((tag, i) => (
-                                <Tag key={i}>{tag}</Tag>
-                            ))}
-                        </TagList>
-                    </div>
-                    <UtilityList>
-                        <ExternalLinks href={source} target="_blank">
-                            Source
-                        </ExternalLinks>
-                    </UtilityList>
-                </BlogCard>
-            </Tilt>
-        ))}
-    </SwiperSlide>
-);
+// {
+//     <Tilt
+//                                 options={options}
+//                                 key={id}
+//                             ></Tilt> */
+// }

@@ -11,7 +11,7 @@ import {
     CarouselItemTitle,
     CarouselMobileScrollNode,
 } from './TimeLineStyles';
-import { Section, SectionDivider, SectionText, SectionTitle } from '../../styles/GlobalComponents';
+import { Section, SectionDivider, SectionSubText, SectionText, SectionTitle } from '../../styles/GlobalComponents';
 import { TimeLineData } from '../../constants/constants';
 
 const TOTAL_CAROUSEL_COUNT = TimeLineData.length;
@@ -58,11 +58,18 @@ const Timeline = () => {
         <Section id="about">
             <SectionDivider style={{ margin: '1rem 0 3rem' }} />
             <SectionTitle>About Me</SectionTitle>
-            <SectionText>
-                A minimalist;
-                <br />
-                A mentee and an enthusiast;
-                <br />A diligent coder with persevering attitude...
+            <SectionText style={{ padding: '0 0 90px' }}>
+                <SectionSubText>
+                    <strong>2+ years</strong> of coding experience in <strong>NodeJS</strong> framework with{' '}
+                    <strong>MongoDB Atlas </strong> (cloud database)
+                </SectionSubText>
+                <SectionSubText>
+                    <strong>1+ years</strong> of coding experience in <strong>ReactJS</strong> (web development JS
+                    library) and fullstack <strong>MERN</strong> approach
+                </SectionSubText>
+                <SectionSubText>
+                    <strong>6-odd</strong> months of familiarity with <strong>NextJS</strong>
+                </SectionSubText>
             </SectionText>
             <CarouselContainer ref={carouselRef} onScroll={handleScroll}>
                 <>
