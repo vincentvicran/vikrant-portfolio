@@ -1,8 +1,9 @@
 import React from 'react';
 import Particles from 'react-particles-js';
-import particlesConfig from '../../utils/Particles/particlesConfig.json';
+import snowParticlesConfig from '../../utils/Particles/snowParticlesConfig.json';
+import starParticlesConfig from '../../utils/Particles/starParticlesConfig.json';
 
-export const ParticleComponent = () => (
+export const ParticleComponent = ({ theme }) => (
     <div
         style={{
             position: 'absolute',
@@ -13,7 +14,7 @@ export const ParticleComponent = () => (
             zIndex: '1',
         }}
     >
-        <Particles params={particlesConfig} />
+        <Particles params={theme === 'snow' ? snowParticlesConfig : starParticlesConfig} />
     </div>
 );
 

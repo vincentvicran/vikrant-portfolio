@@ -13,11 +13,11 @@ export const FlexContainer = styled.section`
 `;
 
 export const BlogCard = styled.div`
-    border-radius: 10px;
+    border-radius: 10px 0 10px 0;
     box-shadow: 3px 3px 20px rgba(80, 78, 78, 0.5);
     text-align: center;
     padding: 3rem;
-    background-color: rgba(30, 19, 34, 0.95);
+    background-color: rgba(30, 19, 34, 0.5);
     width: 300px;
     height: 590px;
     margin: auto;

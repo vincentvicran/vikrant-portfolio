@@ -49,7 +49,7 @@ export const Box = styled.div`
     justify-content: center;
     flex-direction: column;
     flex-wrap: wrap;
-    background: #212d45;
+    background: rgba(33, 45, 69, 0.7);
     border-radius: 12px;
     height: 200px;
     padding: 12px;
@@ -67,8 +67,8 @@ export const Box = styled.div`
         z-index: 20;
         overflow: visible;
         transform: scale(1.29);
-        -webkit-backdrop-filter: blur(15px);
-        backdrop-filter: blur(15px);
+        -webkit-backdrop-filter: blur(5px);
+        backdrop-filter: blur(5px);
         background-color: rgba(52, 0, 102, 0.1);
     }
 `;

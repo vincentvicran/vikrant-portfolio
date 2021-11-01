@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components';
+import styled, { createGlobalStyle } from 'styled-components';
 import { normalize } from 'styled-normalize';
 
 const GlobalStyles = createGlobalStyle`
@@ -31,6 +31,36 @@ const GlobalStyles = createGlobalStyle`
     list-style: none;
   }
 
+`;
+
+export const Toggle = styled.div`
+    position: absolute;
+    top: 10px;
+    right: 0;
+    margin: 5%;
+    height: 40px;
+    width: auto;
+    color: #fff;
+    cursor: pointer;
+    z-index: 200;
+    @media ${(props) => props.theme.breakpoints.sm} {
+        margin: 10%;
+        top: 25px;
+        right: -5px;
+    }
+`;
+
+export const ThemeDiv = styled.div`
+    display: flex;
+    flex-wrap: no-wrap;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: flex-end;
+`;
+
+export const Text = styled.div`
+    padding: 0 5px;
+    opacity: 0.5;
 `;
 
 export default GlobalStyles;
